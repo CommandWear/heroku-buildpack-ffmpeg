@@ -7,7 +7,7 @@ indent() {
 echo "-----> Install ffmpeg"
 BUILD_DIR=$1
 VENDOR_DIR="vendor"
-DOWNLOAD_URL="http://johnvansickle.com/ffmpeg/releases/ffmpeg-2.5.1-64bit-static.tar.xz"
+DOWNLOAD_URL="https://commandwear-bin.s3.amazonaws.com/ffmpeg-2.5.2-64bit-static.tar.xz"
 
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 
@@ -20,7 +20,7 @@ echo "exporting PATH and LIBRARY_PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/ffmpeg.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 # rargh
-echo 'export PATH="$PATH:$HOME/vendor/ffmpeg-2.5.1-64bit-static"' >> $PROFILE_PATH
+echo 'export PATH="$PATH:$HOME/vendor/ffmpeg-2.5.2-64bit-static"' >> $PROFILE_PATH
 
 # statically linked, no libraries needed
 #echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/vendor/ffmpeg/lib"' >> $PROFILE_PATH
